@@ -4,8 +4,6 @@ const app = express();
 
 const studentRouter = require("./routes/student.routes");
 
-app.use("/api/students", studentRouter);
-
 const PORT = 3000;
 
 app.use(express.json());
