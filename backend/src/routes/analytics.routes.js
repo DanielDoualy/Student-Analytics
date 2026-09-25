@@ -9,9 +9,9 @@ const {
 
 const router = express.Router();
 
-router.get("/", getGeneralAverageAPI);
-router.get("/average", getAveragePerStudentAPI);
-router.get("/best", getBestStudentAverageAPI);
-router.get("/worst", getWorstStudentAverageAPI)
+router.get("/general-average", getGeneralAverageAPI);
+router.get("/student", getAveragePerStudentAPI);
+router.get("/best-student", getBestStudentAverageAPI);
+router.get("/worst-student", getWorstStudentAverageAPI)
 
 module.exports = router;
