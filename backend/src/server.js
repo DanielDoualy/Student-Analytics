@@ -2,6 +2,10 @@ const express = require("express");
 
 const app = express();
 
+const cors = require("cors");
+
+app.use(cors());
+
 const studentRouter = require("./routes/student.routes");
 const subjectRouter = require("./routes/subject.routes");
 const semesterRouter = require("./routes/semester.routes");
@@ -27,3 +31,5 @@ app.use("/api/subject", subjectRouter);
 app.use("/api/semester", semesterRouter);
 app.use("/api/grade", gradeRouter);
 app.use("/api/analytics", analyticsRouter);
+
+module.exports = app;
