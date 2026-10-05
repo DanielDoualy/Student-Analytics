@@ -1,38 +1,194 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Analytics</title>
+
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
 
-    <h1>Student Analytics</h1>
+    <main class="dashboard">
 
-    <section class="stats">
+        <!-- HEADER -->
+        <header class="dashboard-header">
+            <div>
+                <h1>Student Analytics</h1>
+                <p>Tableau de bord des performances académiques</p>
+            </div>
+        </header>
 
-        <div class="card">
-            <h3>Moyenne générale</h3>
-            <p id="general-average">--</p>
+
+        <!-- STATISTIQUES -->
+        <section class="stats">
+
+            <article class="card">
+                <div class="card-title">
+                    <span>Moyenne générale</span>
+                </div>
+
+                <p id="general-average" class="card-value">
+                    --
+                </p>
+
+                <span class="card-description">
+                    Moyenne de tous les étudiants
+                </span>
+            </article>
+
+
+            <article class="card">
+                <div class="card-title">
+                    <span>Meilleur étudiant</span>
+                </div>
+
+                <p id="best-student" class="card-value">
+                    --
+                </p>
+
+                <span class="card-description">
+                    Meilleure moyenne générale
+                </span>
+            </article>
+
+
+            <article class="card">
+                <div class="card-title">
+                    <span>Étudiant le plus faible</span>
+                </div>
+
+                <p id="worst-student" class="card-value">
+                    --
+                </p>
+
+                <span class="card-description">
+                    Moyenne la plus faible
+                </span>
+            </article>
+
+        </section>
+
+
+        <!-- PERFORMANCE DES ETUDIANTS -->
+        <section class="students-section">
+
+            <div class="section-header">
+                <div>
+                    <h2>Performance des étudiants</h2>
+                    <p>Moyenne générale par étudiant</p>
+                </div>
+            </div>
+
+
+            <!-- TABLEAU -->
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Moyenne</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="students-table">
+
+                        <!--
+                        Les lignes seront générées
+                        dynamiquement avec JavaScript.
+                        -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+        <!-- GRAPHIQUES -->
+    <section class="charts-section">
+
+        <div class="section-header">
+            <div>
+                <h2>Analyse des performances</h2>
+                <p>Visualisation des résultats académiques</p>
+            </div>
         </div>
 
-        <div class="card">
-            <h3>Meilleur étudiant</h3>
-            <p id="best-student">--</p>
+
+        <!-- Moyenne par étudiant -->
+        <div class="chart-card chart-full">
+
+            <div class="chart-header">
+                <div>
+                    <h3>Moyenne par étudiant</h3>
+                    <p>Comparaison des performances individuelles</p>
+                </div>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="students-chart"></canvas>
+            </div>
+
         </div>
 
-        <div class="card">
-            <h3>Étudiant le plus faible</h3>
-            <p id="worst-student">--</p>
+
+        <!-- Deux graphiques côte à côte -->
+        <div class="charts-grid">
+
+            <!-- Moyenne par matière -->
+            <div class="chart-card">
+
+                <div class="chart-header">
+                    <div>
+                        <h3>Moyenne par matière</h3>
+                        <p>Performance moyenne par discipline</p>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="subjects-chart"></canvas>
+                </div>
+
+            </div>
+
+
+            <!-- Moyenne par semestre -->
+            <div class="chart-card">
+
+                <div class="chart-header">
+                    <div>
+                        <h3>Moyenne par semestre</h3>
+                        <p>Évolution des performances</p>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <canvas id="semesters-chart"></canvas>
+                </div>
+
+            </div>
+
         </div>
 
     </section>
 
-    <h2>Moyenne par etudiant</h2>
-    <ul id="list">
-    </ul>
 
     <script src="app.js"></script>
+
+
 </body>
+
 </html>
